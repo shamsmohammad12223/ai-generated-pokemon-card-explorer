@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pokémon Card Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <div class="small-title">API HOMEWORK • POKÉDEX LAB</div>
+
+            <h1>Pokémon Card Explorer</h1>
+
+            <p>
+                Search the PokéAPI, inspect the response,
+                and turn structured data into a trading-card-style interface.
+            </p>
+
+            <div class="api-label">● POKEAPI</div>
+        </header>
+
+
+        <!-- Search Section -->
+        <section class="search-section">
+
+            <div class="section-title">LIVE SEARCH</div>
+
+            <h2>Find a Pokémon</h2>
+
+            <div class="endpoint">
+                GET /api/v2/pokemon/{name}
+            </div>
+
+            <form id="searchForm">
+
+                <input
+                    type="text"
+                    id="pokemonInput"
+                    placeholder="Enter Pokémon name..."
+                    value="pikachu"
+                    required
+                >
+
+                <button type="submit">
+                    Search ↗
+                </button>
+
+            </form>
+
+
+            <!-- Quick Search -->
+            <div class="quick-search">
+
+                <span>Quick search:</span>
+
+                <button type="button" class="quick-btn" data-name="pikachu">
+                    Pikachu
+                </button>
+
+                <button type="button" class="quick-btn" data-name="charizard">
+                    Charizard
+                </button>
+
+                <button type="button" class="quick-btn" data-name="bulbasaur">
+                    Bulbasaur
+                </button>
+
+                <button type="button" class="quick-btn" data-name="mewtwo">
+                    Mewtwo
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Message -->
+        <div id="message"></div>
+
+
+        <!-- Pokemon Card -->
+        <section id="pokemonCard" class="pokemon-card">
+
+            <!-- Top Part -->
+            <div class="card-top">
+
+                <div class="pokemon-info">
+
+                    <div id="pokemonType" class="type-text">
+                        Electric Type
+                    </div>
+
+                    <h2 id="pokemonName">
+                        Pikachu
+                    </h2>
+
+                    <div id="pokemonTypes" class="types">
+                        <span class="type-badge">ELECTRIC</span>
+                    </div>
+
+                </div>
+
+                <div class="pokemon-number" id="pokemonId">
+                    #025
+                </div>
+
+                <img
+                    id="pokemonImage"
+                    src=""
+                    alt="Pokemon"
+                >
+
+            </div>
+
+
+            <!-- Basic Information -->
+            <div class="basic-info">
+
+                <div>
+                    <span>Height</span>
+                    <strong id="pokemonHeight">0.4 M</strong>
+                </div>
+
+                <div>
+                    <span>Weight</span>
+                    <strong id="pokemonWeight">6.0 KG</strong>
+                </div>
+
+                <div>
+                    <span>Abilities</span>
+                    <strong id="pokemonAbilities">
+                        Static, Lightning Rod
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- Stats -->
+            <div class="stats-section">
+
+                <div class="stats-header">
+                    <div>
+                        <span>BATTLE PROFILE</span>
+                        <h3>Base stats</h3>
+                    </div>
+
+                    <div class="source">
+                        Source: API response
+                    </div>
+                </div>
+
+
+                <!-- HP -->
+                <div class="stat">
+
+                    <label>HP</label>
+
+                    <div class="bar">
+                        <div id="hpBar" class="bar-fill"></div>
+                    </div>
+
+                    <span id="hpValue">0</span>
+
+                </div>
+
+
+                <!-- Attack -->
+                <div class="stat">
+
+                    <label>ATTACK</label>
+
+                    <div class="bar">
+                        <div id="attackBar" class="bar-fill"></div>
+                    </div>
+
+                    <span id="attackValue">0</span>
+
+                </div>
+
+
+                <!-- Defense -->
+                <div class="stat">
+
+                    <label>DEFENSE</label>
+
+                    <div class="bar">
+                        <div id="defenseBar" class="bar-fill"></div>
+                    </div>
+
+                    <span id="defenseValue">0</span>
+
+                </div>
+
+
+                <!-- Special Attack -->
+                <div class="stat">
+
+                    <label>SP. ATTACK</label>
+
+                    <div class="bar">
+                        <div id="specialAttackBar" class="bar-fill"></div>
+                    </div>
+
+                    <span id="specialAttackValue">0</span>
+
+                </div>
+
+
+                <!-- Special Defense -->
+                <div class="stat">
+
+                    <label>SP. DEFENSE</label>
+
+                    <div class="bar">
+                        <div id="specialDefenseBar" class="bar-fill"></div>
+                    </div>
+
+                    <span id="specialDefenseValue">0</span>
+
+                </div>
+        
+                <div class="stat">
+
+                    <label>SPEED</label>
+
+                    <div class="bar">
+                        <div id="speedBar" class="bar-fill"></div>
+                    </div>
+
+                    <span id="speedValue">0</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
